@@ -40,57 +40,48 @@ class BinarySearchTree {
               }
           }
       }
-      console.log(this.Tree);
   }
   has(data) {
       let k = true;
       let tree = this.Tree;
       while (k) {
           if (data == tree.data) {
-              console.log('true');
               return true;
           } else if (data < tree.data) {
               if (tree.left) {
                   tree = tree.left;
               } else {
-                  console.log('false');
                   return false;
               }
           } else if (data > tree.data) {
               if (tree.right) {
                   tree = tree.right;
               } else {
-                  console.log('false');
                   return false;
               }
           }
       }
-      console.log(this.Tree);
   }
   find(data) {
       let k = true;
       let tree = this.Tree;
       while (k) {
           if (data == tree.data) {
-              console.log(tree);
               return tree;
           } else if (data < tree.data) {
               if (tree.left) {
                   tree = tree.left;
               } else {
-                  console.log('null');
                   return null;
               }
           } else if (data > tree.data) {
               if (tree.right) {
                   tree = tree.right;
               } else {
-                  console.log('null');
                   return null;
               }
           }
       }
-      console.log(this.Tree);
   }
   remove(data) {
       let fin = this.find(data);
@@ -108,35 +99,29 @@ class BinarySearchTree {
               let parent2 = res2[1];
               tree.data = min;
               this.removeNode(parent2,tree2);
-              console.log(res2);
           }
       }
-      console.log(this.Tree);
   }
   min(tree) {
       if(!tree){
           tree = this.Tree;
       }
       if(!tree){
-          console.log('null')
           return null;
       }
       while (tree.left) {
           tree = tree.left;
       }
-      console.log(tree.data);
       return tree.data;
   }
   max() {
       let tree = this.Tree;
       if(!tree){
-          console.log('null')
           return null;
       }
       while (tree.right) {
           tree = tree.right;
       }
-      console.log(tree.data);
       return tree.data;
   }
   returnElementAndParent(data){
